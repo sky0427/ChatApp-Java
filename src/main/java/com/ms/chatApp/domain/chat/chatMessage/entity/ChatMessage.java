@@ -12,16 +12,18 @@ import org.springframework.data.annotation.Id;
 @Getter
 @SuperBuilder
 @NoArgsConstructor
-@AllArgsConstructor
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@Table(name = "chat_messages")
 @ToString(callSuper = true)
 public class ChatMessage extends BaseEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "chat_message_id")
     private Long id;
-
-    private String writerName;
+    private String writer;
     private String content;
-    @ManyToOne
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "chat_room_id")
     private ChatRoom chatRoom;
 }

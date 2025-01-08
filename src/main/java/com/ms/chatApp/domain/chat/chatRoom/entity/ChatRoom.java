@@ -4,9 +4,7 @@ import com.ms.chatApp.domain.chat.chatMessage.entity.ChatMessage;
 import com.ms.chatApp.global.jpa.BaseEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import java.util.List;
@@ -15,11 +13,10 @@ import java.util.List;
 @Setter
 @Getter
 @SuperBuilder
+@NoArgsConstructor
+@AllArgsConstructor
 @ToString(callSuper = true)
 public class ChatRoom  extends BaseEntity {
-    public ChatRoom () {
-
-    }
     private String name;
 
     @OneToMany

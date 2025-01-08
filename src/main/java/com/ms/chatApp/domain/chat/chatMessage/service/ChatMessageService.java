@@ -11,13 +11,7 @@ import org.springframework.stereotype.Service;
 public class ChatMessageService {
     private final ChatMessageRepository chatMessageRepository;
 
-    public void create(ChatRoom chatRoom, String writerName, String content) {
-        ChatMessage chatMessage = ChatMessage.builder()
-                .chatRoom(chatRoom)
-                .writerName(writerName)
-                .content(content)
-                .build();
+    // 채팅방 메세지 출력
 
-        chatMessageRepository.save(chatMessage);
-    }
+    // 채팅 메시지 등록
 }

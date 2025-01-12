@@ -1,5 +1,7 @@
 package com.ms.chatApp.domain.chat.chatMessage.dto;
 
+import com.ms.chatApp.domain.chat.chatMessage.entity.ChatMessage;
+import com.ms.chatApp.domain.chat.chatRoom.entity.ChatRoom;
 import lombok.*;
 
 @Data
@@ -15,8 +17,15 @@ public class ChatDto {
     }
 
     private MessageType messageType; // 메세지 타입
-    private Long chatRoomId; // 채팅방 번호  a`4
-    private String sender; // 채팅을 보낸 사람
+    private Long chatRoomId; // 채팅방 번호
+    private Long senderId; // 채팅을 보낸 사람 ID
     private String message; // 메세지
-    private String time; // 채팅 발송 시간
+
+    public ChatMessage toEntity(ChatRoom chatRoom) {
+        return ChatMessage.builder()
+                .chatRoom(chatRoom)
+                .senderId(senderId)
+                .message(message)
+                .build();
+    }
 }

@@ -10,13 +10,9 @@ import org.springframework.stereotype.Service;
 public class ChatRoomService {
     private final ChatRoomRepository chatRoomRepository;
 
-    public ChatRoom create(String name) {
-        ChatRoom chatRoom = ChatRoom.builder()
-                .name(name)
-                .build();
+    // findAllChatRoom
 
-        chatRoomRepository.save(chatRoom);
+    // findChatRoomById
 
-        return chatRoom;
-    }
+    // createChatRoom
 }

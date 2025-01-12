@@ -19,7 +19,7 @@ import java.util.UUID;
 public class ChatRoom  extends BaseEntity {
     private String roomId; // 채팅방 아이디
     private String roomName; // 채팅방 이름
-    private Long userCount; // 채팅방 인원수
+    private Integer userCount; // 채팅방 인원수
 
     @OneToMany
     private List<ChatMessage> chatMessages;

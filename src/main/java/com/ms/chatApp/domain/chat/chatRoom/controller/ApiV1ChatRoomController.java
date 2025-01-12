@@ -1,6 +1,6 @@
 package com.ms.chatApp.domain.chat.chatRoom.controller;
 
-import com.ms.chatApp.domain.chat.chatRoom.dto.ChatDto;
+import com.ms.chatApp.domain.chat.chatMessage.dto.ChatDto;
 import com.ms.chatApp.domain.chat.chatRoom.service.ChatRoomService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -8,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.socket.WebSocketSession;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
